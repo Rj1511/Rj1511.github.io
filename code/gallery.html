@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+    <div class="menu-btn">
+        <div id="list">
+        <li class="active"><a class="active" href="#">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="logo">
+            <p>Heavenly</p>
+        </div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="explore.html">Explore</a>
+            <a class="active-nav" href="contact-us.html" style="color: black;">Contact</a>
+        </div>
+    </div>
+    <section class="home">
+        
+        <video class="1 video-slide active" src="v1.mp4" autoplay muted loop></video>
+        <video class="2 video-slide" src="v2.mp4" autoplay muted loop></video>
+        <video class="3 video-slide" src="v4.mp4" autoplay muted loop></video>
+        <video class="4 video-slide" src="v5.mp4" autoplay muted loop></video>
+        <video class="5 video-slide" src="v6.mp4" autoplay muted loop></video>
+        <video class="6 video-slide" src="v7.mp4" autoplay muted loop></video>
+        <img src="Explore-9.jpg" alt="Explore" class="7 video-slide">
+        <img src="Explore-10.jpg" alt="Explore" class="8 video-slide">
+        <img src="Explore-11.jpg" alt="Explore" class="9 video-slide">
+        <img src="Explore-12.jpg" alt="Explore" class="10 video-slide">
+        <img src="Explore-13.jpg" alt="Explore" class="11 video-slide">
+        <img src="Explore-14.jpg" alt="Explore" class="12 video-slide">
+        <img src="Explore-15.jpg" alt="Explore" class="13 video-slide">
+        <img src="Explore-16.jpg" alt="Explore" class="14 video-slide">
+        <img src="Explore-17.jpg" alt="Explore" class="14 video-slide">
+        <div class="slider-navigation">
+            <div class="1 nav-btn active"></div>
+            <div class="2 nav-btn "></div>
+            <div class="3 nav-btn"></div>
+            <div class="4 nav-btn"></div>
+            <div class="5 nav-btn"></div>
+            <div class="6 nav-btn"></div>
+            <div class="7 nav-btn"></div>
+            <div class="8 nav-btn"></div>
+            <div class="9 nav-btn"></div>
+            <div class="10 nav-btn"></div>
+            <div class="11 nav-btn"></div>
+            <div class="12 nav-btn"></div>
+            <div class="13 nav-btn"></div>
+            <div class="14 nav-btn"></div>
+            <div class="15 nav-btn"></div>
+        </div>
+</section>
+
+<script type="text/javascript">
+
+const btns = document.querySelectorAll(".nav-btn");
+const slides = document.querySelectorAll(".video-slide");
+
+
+btns.forEach((e)=>{
+    e.addEventListener("click", ()=>{
+        btns.forEach((e)=>{
+            e.classList.remove("active");
+            document
+        })
+        e.classList.add("active");
+        btns.forEach((e)=>{
+            let a = e.classList;
+            if(a.contains("active")){
+                active_pos = a[0];
+                console.log(active_pos)
+                slides.forEach((ee)=>{
+                    ee.classList.remove("active")
+                    console.log(ee.classList)
+                })
+                slides.forEach((event)=>{
+                    if(event.classList.contains(active_pos)){
+                        event.classList.add("active");
+                        console.log(event.classList)
+                    }
+                })
+            }
+        })
+    })
+})
+
+    const menuBtn= document.querySelector(".menu-btn");
+    // const navigation= document.querySelector(".navigation");
+    menuBtn.addEventListener("click", ()=>{
+        if(!menuBtn.classList.contains("active")){
+                menuBtn.classList.add("active");  
+                document.getElementById("list").style.visibility = "visible";
+            
+        }else{
+                menuBtn.classList.remove("active");  
+                document.getElementById("list").style.visibility = "hidden";
+        }
+    });
+
+</script>
+<style>
+    .menu-btn{
+        display: none;
+    }
+    .nav{
+        background-color: black;
+    }
+    .active-nav{
+        -webkit-text-stroke: 1px;
+        /* color: black; */
+        a{
+            color: black;
+        }
+    }
+    @media (max-width:600px) {
+    .nav{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    } 
+
+</style>
+</body>
+</html>
